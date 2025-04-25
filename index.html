@@ -6,116 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="resume.css">
     <style>
-        body {
-            background-color: #e6f2ff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .full {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .left, .right {
-            padding: 15px;
-            box-sizing: border-box;
-        }
-        .left {
-            flex: 1;
-            min-width: 250px;
-        }
-        .right {
-            flex: 2;
-        }
-        h1 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        h2, h3 {
-            font-size: 18px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        h4 {
-            font-size: 16px;
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-        p, li {
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .image {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .image img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .otsikko {
-            margin-bottom: 20px;
-        }
-
-        /* Responsiiviset tyylit */
-        @media only screen and (max-width: 768px) {
-            .full {
-                flex-direction: column;
-                margin: 10px;
-                padding: 15px;
-            }
-            .left, .right {
-                width: 100%;
-                padding: 10px;
-            }
-            h1 {
-                font-size: 22px;
-                text-align: center;
-            }
-            .title {
-                text-align: center;
-            }
-            .image {
-                margin-top: 10px;
-            }
-            .Contact p {
-                margin: 5px 0;
-            }
-            ul {
-                margin-top: 5px;
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            h1 {
-                font-size: 20px;
-            }
-            h2, h3 {
-                font-size: 16px;
-            }
-            h4 {
-                font-size: 15px;
-            }
-            p, li {
-                font-size: 13px;
-            }
-            .image img {
-                width: 80px;
-                height: 80px;
-            }
-        }
+       
     </style>
 </head>
 
@@ -124,6 +17,10 @@
         <div class="left">
             <div class="image">
                 <img src="./omakuva.jpg" alt="Kuva Matias Palmroth">
+            </div>
+            <div class="mobile-name">
+                <h1>Matias Palmroth</h1>
+                <p>Student at University of Helsinki | Computer Science | Research Program</p>
             </div>
             <div class="Contact">
                 <h2>Education</h2>
