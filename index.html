@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="resume.css">
-    <style>
-       
-    </style>
 </head>
 
 <body>
@@ -58,6 +55,7 @@
                 </ul>
             </div>
         </div>
+
         <div class="right">
             <div class="name">
                 <h1>Matias Palmroth</h1>
@@ -78,6 +76,7 @@
                     service and Reserve Officer School (RUK).
                 </p>
             </div>
+
             <div class="otsikko">
                 <h3>Education</h3>
                 <p>
@@ -88,6 +87,7 @@
                     Science program.
                 </p>
             </div>
+
             <div class="otsikko">
                 <h3 id="work_experience">Work experience</h3>
                 <h4>Entrepreneurship 2008-2023</h4>
@@ -99,15 +99,121 @@
                     as CEO, we tripled our turnover and expanded our office network to 11 locations.
                 </p>
                 <h4>Volunteer work</h4>
-                <p> I am serving as a student representative on the Entrepreneurship Committee of Tekniikan Akateemiset (TEK).</p>
+                <p>I am serving as a student representative on the Entrepreneurship Committee of Tekniikan Akateemiset (TEK).</p>
             </div>
+
             <div class="otsikko">
                 <a href="https://github.com/Matias000001">Check my GitHub projects</a>
             </div>
+
             <div style="margin-top: 10px; margin-bottom: 40px;">
               <a href="ciphervault.html">CipherVault Encryption Software </a>
             </div>
-      </div>
+        </div>
     </div>
+
+<!-- VIDEO SECTION -->
+<section class="video-section">
+    <h3>Project Demo Videos</h3>
+    <p>Short screen recordings demonstrating some of my software projects.</p>
+
+    <div class="video-grid">
+
+        <!-- Video 1 -->
+        <div class="video-card">
+            <div onclick="openVideo('cipher_vault_app_demo.mp4')">
+                <video src="cipher_vault_app_demo.mp4" preload="metadata"></video>
+            </div>
+            <span>CipherVault – Encryption Flow</span>
+            <p class="video-desc">Encryption software demonstration.</p>
+            <a class="info-link" onclick="openInfo('info1')">See more info...</a>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card">
+            <div onclick="openVideo('webshop.mp4')">
+                <video src="webshop.mp4" preload="metadata"></video>
+            </div>
+            <span>Webshop without JS</span>
+            <p class="video-desc">Pure HTML form-based shop prototype.</p>
+            <a class="info-link" onclick="openInfo('info2')">See more info...</a>
+        </div>
+
+                <!-- Video 3 -->
+        <div class="video-card">
+            <div onclick="openVideo('salatut_katiskat.mp4')">
+                <video src="salatut_katiskat.mp4" preload="metadata"></video>
+            </div>
+            <span>Salatut Katiskat</span>
+            <p class="video-desc">Sarcasmic joke game</p>
+            <a class="info-link" onclick="openInfo('info3')">See more info...</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- POPUP VIDEO MODAL -->
+<div id="videoModal" class="modal" onclick="closeVideo()">
+  <video id="modalVideo" controls></video>
+</div>
+
+<!-- INFO MODAL -->
+<div id="infoModal" class="info-modal" onclick="closeInfo()">
+    <div class="info-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeInfo()">×</span>
+        <div id="infoText"></div>
+    </div>
+</div>
+
+<script>
+function openVideo(src) {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  video.src = src;
+  modal.style.display = "flex";
+  video.play();
+}
+
+function closeVideo() {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  modal.style.display = "none";
+  video.pause();
+  video.src = "";
+}
+
+function openInfo(id) {
+    const modal = document.getElementById('infoModal');
+    const box   = document.getElementById('infoText');
+
+    if (id === 'info1') {
+        box.innerHTML = `
+            <h3>CipherVault – Details</h3>
+            <p>This demo illustrates the encryption workflow and file handling. It uses the ChaCha20-Poly1305 encryption algorithm together with Argon2id for key derivation.</p>
+        `;
+    }
+
+    if (id === 'info2') {
+        box.innerHTML = `
+            <h3>Webshop Prototype – Details</h3>
+            <p>This demonstrates a product ordering flow built entirely without JavaScript, using HTML form logic and backend routing.</p>
+        `;
+    }
+
+    if (id === 'info3') {
+        box.innerHTML = `
+            <h3>Salatut Katiskat – Details</h3>
+            <p>This game was created in C#, and it was my first programming project at the University of Jyväskylä.</p>
+        `;
+    }
+
+    modal.style.display = "flex";
+}
+
+function closeInfo() {
+    document.getElementById('infoModal').style.display = "none";
+}
+</script>
+
 </body>
 </html>
